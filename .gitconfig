@@ -1,0 +1,22 @@
+[user]
+	email = xxx 
+	name = yxiao2
+[core]
+	editor = vim
+	excludesfile = /home/yxiao2/.gitignore
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[http]
+	postBuffer = 524288000
+[alias]
+	st = status
+	ci = commit
+	co = checkout
