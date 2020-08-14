@@ -1,0 +1,22 @@
+alias killz="ps -e -o ppid,stat,user |grep Z | awk '{print $1}' | xargs kill -9"
+alias ea='for i in *.tgz; do tar -xzvf $i; done'
+alias fn='find . -name'
+sshwrapper(){
+    pwd=$1
+    shift
+    ips=""
+    while [[ -n $1 ]]; do
+        if [[ $1 = '-c' ]]; then
+            shift
+            break
+        fi
+        ips="$ips $1"
+        shift
+    done
+    cmd=$@
+    echo $ips
+    for ip in $ips; do
+        echo "---- $ip ----"
+        sshpass -p $pwd ssh root@$ip $cmd
+    done
+}
